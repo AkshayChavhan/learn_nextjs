@@ -46,3 +46,64 @@ If you look into the package.json file, you will find a script to run the develo
 This will start the development server. Open the URL http://localhost:3000 (the URL shown in the terminal) by pressing control and clicking on it
 
 Congratulations you have just started your first Next.js app. In the next lesson, we will learn how to customize this app to our liking. This will include changing the existing index.js page, adding more pages, adding styles, etc.
+
+
+## STEP-2 File Based Routing in Next.js
+
+In the last lesson, we built our first Next.Js application. This lesson will focus primarily on the file-based routing provided by Next.Js. Before we dive deep into the file-based routing, I will answer a few of the most asked questions by beginners
+
+Next.Js FAQs
+Is Nextjs a Frontend or a Backend Framework?
+
+Its both, it can generate a frontend bundle along with APIs which are run on the server.
+
+Is NextJs better than React?
+
+No, and Yes! React is raw and Next.js comes with a few more features on top of that like file-based routing, Server-Side Rendering (SSR), Static Site Generation (SSG), a built-in router, etc.!
+
+ 
+
+-- File-Based Routing
+While using react, we need to install a third-party package to get the routing
+
+Next.js comes built-in with an incredible feature called file-based routing. This feature enables Nextjs developers to simply create files inside the pages folder and those files will serve as routes for the application. For example, if you create 3 files (about.js, contact.js, and index.js) inside the pages folder of your Next.js application, you can view these components by visiting localhost:3000/about, localhost:3000/contact, and localhost:3000/ respectively.
+
+This is what file-based routing is essentially about! When a file is added to the “pages” directory, it's automatically available as a route.  Each page exports a react component which is rendered when the corresponding URL is visited by the person visiting the page!
+
+A sample about page (component) will look something like this:
+
+>>>
+function About() {
+  return <div>About</div>
+}
+
+export default About
+
+
+Visiting http://localhost:3000/about will display “About” on the screen as this component returns a <div> with “About” inside of it!
+
+ 
+
+-- Nested Routes
+To create nested routes in Next.js, all we need to do is to create corresponding nested folders. For example, If you want to create a route at localhost:3000/about/one , all you need to do is to create a folder named “about” with a component named “one.js”
+
+-- Dynamic Routes
+Defining routes as shown in the Nested Routes section above is not always enough for complex applications. In Next.js you can add brackets to a page ([sno]) to create a dynamic route (or URL slugs).
+
+Consider the following page pages/blog/[sno].js:
+
+>>> 
+import { useRouter } from 'next/router'
+
+const Post = () => {
+  const router = useRouter()
+  const { sno } = router.query
+
+  return <p>Post: {sno}</p>
+}
+
+export default Post
+
+This page will render Post: 1 when you visit http://localhost:3000/blog/1 and the same page will render Post: 34 when you visit http://localhost:3000/blog/34
+
+
