@@ -1,5 +1,6 @@
 {
     "title": "Learn CSS",
     "content" : "CSS is the language we use to style an HTML document.CSS describes how HTML elements should be displayed.This tutorial will teach you CSS from basic to advanced.",
-    "author" : "Akshay Chavhan"
+    "author" : "Akshay Chavhan",
+    "slug" : "learn-css"
 }
