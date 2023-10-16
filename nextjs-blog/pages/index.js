@@ -11,10 +11,17 @@ export default function Home() {
         <meta name="keywords" content='nextjs , hunting coder blog , hunting coder' />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Script src='exampleScriptFile.js' strategy='lazyOnload'>
-      </Script>
+      {/* <Script src='exampleScriptFile.js' strategy='lazyOnload'></Script> */}
 
-      <main>
+      <main className={styles.mainContainer}>
+        <nav className={styles.mainNavbar}>
+          <ul>
+            <li>Home</li>
+            <li>Blogs</li>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </nav>
         <h1 className={styles.title}>
           Coding Hunter
         </h1>
@@ -23,34 +30,26 @@ export default function Home() {
           A coding hunter for the coders
         </p>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+        <div className={styles.blogs}>
+          <h2>Popular Blogs</h2>
+          <div className={styles.blogItem}>
+            <h3>How to learn Javascript in 2023 ?</h3>
+            <p>dffbu we fiweufbe ewfbwiefbf wefbiufbewfeu fewfibfweufbwe feiwfbeufbeuifbewjdffbu we fiweufbe ewfbwiefbf wefbiufbewfeu fewfibfweufbwe feiwfbeufbeuifbewj</p>
+          </div>
+          <div className={styles.blogItem}>
+            <h3>How to learn Javascript in 2023 ?</h3>
+            <p>dffbu we fiweufbe ewfbwiefbf wefbiufbewfeu fewfibfweufbwe feiwfbeufbeuifbewjdffbu we fiweufbe ewfbwiefbf wefbiufbewfeu fewfibfweufbwe feiwfbeufbeuifbewj</p>
+          </div>
+          <div className={styles.blogItem}>
+            <h3>How to learn Javascript in 2023 ?</h3>
+            <p>dffbu we fiweufbe ewfbwiefbf wefbiufbewfeu fewfibfweufbwe feiwfbeufbeuifbewjdffbu we fiweufbe ewfbwiefbf wefbiufbewfeu fewfibfweufbwe feiwfbeufbeuifbewj</p>
+          </div>
+          <div className={styles.blogItem}>
+            <h3>How to learn Javascript in 2023 ?</h3>
+            <p>dffbu we fiweufbe ewfbwiefbf wefbiufbewfeu fewfibfweufbwe feiwfbeufbeuifbewjdffbu we fiweufbe ewfbwiefbf wefbiufbewfeu fewfibfweufbwe feiwfbeufbeuifbewj</p>
+          </div>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
         </div>
       </main>
 
