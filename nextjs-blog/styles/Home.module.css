@@ -103,3 +103,7 @@
 .mainContainer {
   padding : 0 0
 }
+
+.mainImage {
+  border-radius : 10px;
+}
