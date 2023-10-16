@@ -107,3 +107,10 @@ export default Post
 This page will render Post: 1 when you visit http://localhost:3000/blog/1 and the same page will render Post: 34 when you visit http://localhost:3000/blog/34
 
 
+
+
+
+
+## HUNTING CODER
+BRANCH:- 03_01_hunting_coder_app_setup
+ 
