@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Script from 'next/script';
+import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -16,10 +17,10 @@ export default function Home() {
       <main className={styles.mainContainer}>
         <nav className={styles.mainNavbar}>
           <ul>
-            <li>Home</li>
-            <li>Blogs</li>
-            <li>About</li>
-            <li>Contact</li>
+            <Link href='/'><li>Home</li></Link>
+            <Link href='/blogs'><li>Blogs</li></Link>
+            <Link href='/about'><li>About</li></Link>
+            <Link href='/contact'><li>Contact</li></Link>
           </ul>
         </nav>
         <h1 className={styles.title}>
