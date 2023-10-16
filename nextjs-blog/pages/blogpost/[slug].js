@@ -4,8 +4,7 @@ import styles from '../../styles/Blog.module.css';
 
 const Slug = () => {
   const router = useRouter()
-  const { slug } = router.query
-  console.log(router.query)
+  const { slug } = router.query;
 
   return (
     <>
