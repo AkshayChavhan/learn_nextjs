@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
@@ -17,14 +16,6 @@ export default function Home() {
       </Head>
 
       <main className={styles.mainContainer}>
-        <nav className={styles.mainNavbar}>
-          <ul>
-            <Link href='/'><li>Home</li></Link>
-            <Link href='/blogs'><li>Blogs</li></Link>
-            <Link href='/about'><li>About</li></Link>
-            <Link href='/contact'><li>Contact</li></Link>
-          </ul>
-        </nav>
         <h1 className={styles.title}>
           Coding Hunter
         </h1>
