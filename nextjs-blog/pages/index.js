@@ -1,8 +1,6 @@
 import Head from 'next/head';
-import Script from 'next/script';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
-import Dummy from '../components/dummy';
 
 
 export default function Home() {
@@ -14,7 +12,6 @@ export default function Home() {
         <meta name="keywords" content='nextjs , hunting coder blog , hunting coder' />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Script src='exampleScriptFile.js' strategy='lazyOnload'></Script> */}
 
       <main className={styles.mainContainer}>
         <nav className={styles.mainNavbar}>
@@ -25,11 +22,9 @@ export default function Home() {
             <Link href='/contact'><li>Contact</li></Link>
           </ul>
         </nav>
-        <Dummy />
         <h1 className={styles.title}>
           Coding Hunter
         </h1>
-        <h1 className='dummyCss'>Test paragraphs</h1>
 
         <p className={styles.description}>
           A coding hunter for the coders
