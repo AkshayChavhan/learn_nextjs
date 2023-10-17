@@ -3,20 +3,9 @@ import styles from '../../styles/Blog.module.css';
 import { useEffect, useState } from 'react';
 
 
-const Slug = () => {
-
-  const [blog, setBlog] = useState([]);
-  const router = useRouter()
-  useEffect(() => {
-    const { slug } = router.query;
-    console.log("slug => ", slug);
-    if (!router.isReady) return;
-    // http://localhost:3000/blogpost/learn-css.json
-    fetch(`http://localhost:3000/api/getblog?slug=${slug}.json`)
-      .then((item) => item.json())
-      .then((data) => setBlog(data));
-  }, [router.isReady])
-
+const Slug = (props) => {
+  console.log("propssssssssss => ", props);
+  const [blog, setBlog] = useState(props.myBlog);
 
   return (
     <>
@@ -26,6 +15,18 @@ const Slug = () => {
       </div>
     </>
   )
+}
+
+export async function getServerSideProps(context) {
+  const { slug } = context.query;
+  // http://localhost:3000/blogpost/learn-css.json
+  const fetchData = await fetch(`http://localhost:3000/api/getblog?slug=${slug}.json`);
+  const myBlog = await fetchData.json();
+  console.log("myBlog => ", myBlog);
+
+  return {
+    props: { myBlog }
+  }
 }
 
 export default Slug;
