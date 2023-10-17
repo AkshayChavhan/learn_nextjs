@@ -1136,5 +1136,171 @@ Here, the whole front-end bundle of the website is stored in the form of a stati
 So, those were two major pre rendering strategies we use. We’ll learn more about them in depth in the coming lectures. We will implement them in Hunting Coder as well, starting with the Server-Side Rendering in the next lecture. 
 
 
+## Server Side Rendering - getServerSideProps() in Next.js
+In the last lecture, we saw what prerendering is and its two strategies namely, Server-Side Rendering and Static Site Generation. As we explored their use cases, we saw their drawbacks and how each of them solves different problems in different ways.
+
+ 
+
+Today, we will practically see what Server-Side Rendering does to our website when we implement it in our very own Hunting Coder. So, today, we will see how we can make use of the getServerSideProps method to generate hydrated HTMLs through the website’s server.
+
+So, what happens is, the client sends the request to the server, and the server uses this requested query to fetch whatever has been asked through all the APIs concerned and hydrate all the HTMLs with the contents received. And then, the server returns this hydrated HTML back to the client. As a result, the client doesn't have to wait for the APIs to load, and the content is delivered in a much shorter time frame. So, let’s get started with its implementation.
+
+Start by running the development server. Get to the blog.js file present in the pages folder. So, currently when you navigate to the page at http://localhost:3000/blog, it lists all the blogs present on the server. But, there is no such thing available in its page source for the very same reason we discussed in the last lecture. And that demands some change in the blog.js file which is responsible for rendering this blog page.
+
+![Alt text](image-18.png)
+
+Image 1: Page source before applying Server-Side Rendering
+
+ 
+
+Using getServerSideProps() on blog page:
+So, using this getServerSideProps function on a page ensures the pre-rendering of the page on each request with the content, here props, returned by the function. Components can directly access the data returned by this function. So, define the export async function getServerSideProps and do whatever we earlier did in the useEffect function. Fetch the data from the blogs API and format it into JSON and return this data as props referring to the snippet below.
+
+
+>>> 
+export async function getServerSideProps(context) {
+    let data = await fetch('http://localhost:3000/api/blogs')
+    let allBlogs = await data.json()
+
+    return {
+        props: { allBlogs }, // will be passed to the page component as props
+    }
+}
+
+Code Snippet 1: Using the getServerSideProps on blog page
+
+ 
+
+Now, this allBlogs has all the content of all the blogs present on the server. We just have to feed this into the states we created in the Blog component. So, the changed blog.js file looks something like this.
+
+>>>
+import React, { useEffect, useState } from 'react';
+import styles from '../styles/Blog.module.css'
+import Link from 'next/link';
+
+// Step 1: Collect all the files from blogdata directory
+// Step 2: Iterate through the and Display them
+
+
+const Blog = () => {
+    const [blogs, setBlogs] = useState([]);
+    useEffect(() => {
+        console.log("useeffect is running");
+        fetch('http://localhost:3000/api/blogs').then((a) => {
+            return a.json();
+        })
+            .then((parsed) => {
+                setBlogs(parsed)
+            })
+    }, [])
+
+    return <div className={styles.container}>
+        <main className={styles.main}>
+            {blogs.map((blogitem) => {
+                return <div key={blogitem.slug}>
+                    <Link href={`/blogpost/${blogitem.slug}`}>
+                        <h3 className={styles.blogItemh3}>{blogitem.title}</h3></Link>
+                    <p className={styles.blogItemp}>{blogitem.content.substr(0, 140)}...</p>
+                </div>
+            })}
+        </main>
+    </div>
+}
+
+export async function getServerSideProps(context) {
+    let data = await fetch('http://localhost:3000/api/blogs')
+    let allBlogs = await data.json()
+
+    return {
+        props: { allBlogs }, // will be passed to the page component as props
+    }
+}
+
+export default Blog;
+
+
+Code Snippet 2: pages/blog.js after applying getServerSideProps.
+
+ 
+
+Now, when you look at the page source of the same blog page, you would find the whole content there as well.
+
+
+![Alt text](image-19.png)
+
+Image 2: Page source after applying Server-Side Rendering
+
+ 
+
+Now, we’ll do the same thing for our blog post page as well.
+
+Using getServerSideProps() on blog page:
+Open the [slug].js file present in the blogpost folder. Define the same export async function getServerSideProps and copy whatever we were earlier doing to fetch the content of a blog using its queried slug in the useEffect function. We have used the context parameter to receiver the slug here. Format the data into JSON and return this data as props referring to the snippet below.
+
+>>>
+export async function getServerSideProps(context) {
+    // console.log(context.query)
+    // const router = useRouter();
+    const { slug } = context.query;
+
+    let data = await fetch(`http://localhost:3000/api/getblog?slug=${slug}`)
+    let myBlog = await data.json()
+    return {
+        props: { myBlog }, // will be passed to the page component as props
+    }
+}
+
+
+Code Snippet 2: Using the getServerSideProps on blog post page
+
+ 
+
+Similar to what we did on the blog page, we’ll delete whatever we were earlier doing on the client side. We will just feed this prop object to the states and that should suffice. Here’s how the slug.js page looks now.
+
+>>>
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router'
+import styles from '../../styles/BlogPost.module.css';
+
+// Step 1: Find the file corresponding to the slug
+// Step 2: Populate them inside the page
+
+const slug = (props) => {
+    const [blog, setBlog] = useState(props.myBlog);
+
+
+    return <div className={styles.container}>
+        <main className={styles.main}>
+            <h1>{blog && blog.title}</h1>
+            <hr />
+            <div>
+                {blog && blog.content}
+            </div>
+        </main>
+    </div>;
+};
+
+export async function getServerSideProps(context) {
+    // console.log(context.query)
+    // const router = useRouter();
+    const { slug } = context.query;
+
+    let data = await fetch(`http://localhost:3000/api/getblog?slug=${slug}`)
+    let myBlog = await data.json()
+    return {
+        props: { myBlog }, // will be passed to the page component as props
+    }
+}
+
+export default slug;
+
+
+Code Snippet 3: pages/blogpost/[slug].js after applying getServerSideProps.
+
+ 
+
+You can check for yourself if the content is present in the page source of the blog posts page as well. This has made our website faster than before. We are populating content on being requested, and the page source contains the hydrated HTML. The entire process we followed today is called Server-Side Rendering, and was one of the strategies we use under pre rendering. I'll see you all in the next lecture, where we'll discuss another strategy for pre-rendering, namely Static Site Generation.
+
+
 
 
