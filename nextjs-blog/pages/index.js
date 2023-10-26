@@ -31,20 +31,23 @@ export default function Home() {
           <div className={styles.blogItem}>
             <h3>How to learn Javascript in 2023 ?</h3>
             <p>dffbu we fiweufbe ewfbwiefbf wefbiufbewfeu fewfibfweufbwe feiwfbeufbeuifbewjdffbu we fiweufbe ewfbwiefbf wefbiufbewfeu fewfibfweufbwe feiwfbeufbeuifbewj</p>
+            <button className={styles.btn}>Read more</button>
           </div>
           <div className={styles.blogItem}>
             <h3>How to learn Javascript in 2023 ?</h3>
             <p>dffbu we fiweufbe ewfbwiefbf wefbiufbewfeu fewfibfweufbwe feiwfbeufbeuifbewjdffbu we fiweufbe ewfbwiefbf wefbiufbewfeu fewfibfweufbwe feiwfbeufbeuifbewj</p>
+            <button className={styles.btn}>Read more</button>
           </div>
           <div className={styles.blogItem}>
             <h3>How to learn Javascript in 2023 ?</h3>
             <p>dffbu we fiweufbe ewfbwiefbf wefbiufbewfeu fewfibfweufbwe feiwfbeufbeuifbewjdffbu we fiweufbe ewfbwiefbf wefbiufbewfeu fewfibfweufbwe feiwfbeufbeuifbewj</p>
+            <button className={styles.btn}>Read more</button>
           </div>
           <div className={styles.blogItem}>
             <h3>How to learn Javascript in 2023 ?</h3>
             <p>dffbu we fiweufbe ewfbwiefbf wefbiufbewfeu fewfibfweufbwe feiwfbeufbeuifbewjdffbu we fiweufbe ewfbwiefbf wefbiufbewfeu fewfibfweufbwe feiwfbeufbeuifbewj</p>
+            <button className={styles.btn}>Read more</button>
           </div>
-
         </div>
       </main>
 
