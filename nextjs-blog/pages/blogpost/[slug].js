@@ -8,11 +8,18 @@ const Slug = (props) => {
   console.log("propssssssssss => ", props);
   const [blog, setBlog] = useState(props.myBlog);
 
+  function createMarkup(c) {
+    return { __html: c };
+  }
+
   return (
     <>
       <div className={styles.blogs}>
         <h1>{blog.title}</h1>
-        <p>{blog.content}</p>
+        {
+          blog && 
+        <div dangerouslySetInnerHTML={createMarkup(blog.content)}></div>
+        }
       </div>
     </>
   )
