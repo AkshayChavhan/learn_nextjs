@@ -19,7 +19,8 @@ export default function Home() {
         <h1 className={styles.title}>
           Coding Hunter
         </h1>
-          <Image className={styles.mainImage} src='/home.avif' alt='coder image' width={250} height={150}/>
+        {/* <Image className={styles.mainImage} src='/home.avif' alt='coder image' width={250} height={150}/> */}
+        <img className={styles.mainImage} src="/home.avif" width={237} height={158} alt="hunting coder" />
         <p className={styles.description}>
           A coding hunter for the coders
         </p>
@@ -48,7 +49,7 @@ export default function Home() {
       </main>
 
       <footer>
-      
+
       </footer>
 
       <style jsx>{`
