@@ -159,9 +159,53 @@ Ok to proceed? (y) y
 Creating a new Next.js app in /home/l910009/Documents/workspace/learn_nextjs/nextjs_full_tut/blog.
 
 
+-------------------------------------------------------------------
+===================================================================
+
+## nextjs03_first program
+
+> what is use of "use client" in nextjs ?
+
+- Client Components enable you to add client-side interactivity to your application. In Next.js, they are pre-rendered on the server and hydrated on the client. The “use client” directive is a convention to declare a boundary between a Server and Client Component module graph.
 
 
+for example :-
+<!-- 
+'use client'
+ 
+import { useState } from 'react'
+ 
+export default function Counter() {
+  const [count, setCount] = useState(0)
+ 
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  )
+} 
+-->
 
+Use cases:
+
+Add interactivity and event listeners (onClick(), onChange(), etc)
+Use State and Lifecycle Effects (useState(), useReducer(), useEffect(), etc)
+Use browser-only APIs
+Use custom hooks that depend on state, effects, or browser-only APIs
+Use React Class components
+
+
+> What are Components based on rendering in Nextjs ?
+  -Server Component : - 
+        -> REnder on server side
+        -> By default , all components are server components
+        -> they are closer to the backend
+        -> So BE - related logic and code should write in server component
+  -Client Components : -
+        -> Render on the Client side
+        -> can make client components with "use client" directive.
+        -> All UI related code and event should be written here
 
 
 
@@ -173,7 +217,3 @@ Creating a new Next.js app in /home/l910009/Documents/workspace/learn_nextjs/nex
 
 -------------------------------------------------------------------
 ===================================================================
-
-
-
-
