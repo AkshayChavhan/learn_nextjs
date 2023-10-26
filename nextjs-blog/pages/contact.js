@@ -48,8 +48,8 @@ function Contact() {
 
   return (
     <div className={style.container}>
-      <h1 className={style.title}>Contact Us</h1>
       <form onSubmit={handleSubmit}>
+        <h1 className={style.title}>Contact Us</h1>
         <div className={style.formgroup}>
           <label htmlFor="name">Name</label>
           <input onChange={handleChange} value={form.name} type="text" name="name" className="form-control" id="exampleInputEmail1" placeholder="Enter your name..." />

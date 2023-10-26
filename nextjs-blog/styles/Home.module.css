@@ -101,9 +101,13 @@
 }
 
 .mainContainer {
-  padding : 0 0
+  padding : 0 0;
 }
 
 .mainImage {
-  border-radius : 10px;
+  border-radius : 29%;
+}
+
+.btn {
+  margin: 0px 0px 20px 0px;
 }
