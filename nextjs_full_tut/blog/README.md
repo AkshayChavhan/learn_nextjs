@@ -418,3 +418,81 @@ What we cover?
 Here we are trying to use client events like button click on server side component by creating a client
 component having button with its event.
 
+
+============================================================
+# next17 CSS STYLE in nextjs
+
+
+In Next.js, you can apply CSS styles to your components in a variety of ways, and the choice of styling method largely depends on your project's requirements and your personal preferences. Here are some common ways to apply CSS styles in a Next.js project:
+
+
+1 > CSS Modules (IMPORTANT) :-
+
+Next.js has built-in support for CSS Modules, which is a local scope CSS solution. With CSS Modules, you create CSS files that are module-scoped, and you can import them directly into your JavaScript/React components.
+CSS Modules provide unique class names to prevent styling conflicts between different components.
+To use CSS Modules, create a .module.css or .module.scss file for your styles, and then import it into your component. For example:
+
+>>>
+// styles.module.css
+.container {
+  background-color: lightgray;
+}
+
+// MyComponent.js
+import React from 'react';
+import styles from './styles.module.css';
+
+function MyComponent() {
+  return <div className={styles.container}>Styled Content</div>;
+}
+
+export default MyComponent;
+
+
+2 > Global Styles (IMPORTANT):
+
+If you need to apply global styles to your entire application, you can create a global CSS file and import
+it in your custom _app.js (or _app.tsx) file.
+Any styles defined in this global CSS file will be applied to all pages and components in your application.
+
+
+3 > Inline Styles (IMPORTANT):
+
+You can also use inline styles directly in your React components by applying styles using JavaScript objects. This can be useful for small, component-specific styles.
+
+
+4 > Styled-components:
+
+Styled-components is a popular CSS-in-JS library that allows you to define your styles using tagged template
+literals within your JavaScript/React components.
+To use styled-components, you need to install the library, and then you can define your styles directly in your
+components using JavaScript template literals.
+For example: 
+
+
+>>>
+// MyComponent.js
+import React from 'react';
+import styled from 'styled-components';
+
+const StyledDiv = styled.div`
+  background-color: lightgray;
+`;
+
+function MyComponent() {
+  return <StyledDiv>Styled Content</StyledDiv>;
+}
+
+export default MyComponent;
+
+
+5 > CSS Preprocessors:
+
+Next.js also supports popular CSS preprocessors like SASS, Less, and Stylus. You can use them by creating
+files with the respective extensions (e.g., .scss, .less) and importing them into your components as needed.
+
+
+6 > Third-Party Libraries:
+
+You can use third-party CSS libraries and frameworks like Bootstrap or Material-UI by installing them and following their respective documentation for integration with Next.js.
+
