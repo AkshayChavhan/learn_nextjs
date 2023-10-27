@@ -218,7 +218,7 @@ Basic routing | File based routing
 -The folder name will match with the route name
 -page.js should be present in every folder
 
-for example:- 
+for example:-
 localhost:3000/login
 src/login/page.js
 
@@ -233,20 +233,18 @@ src/about/page.js
 
 next/link : - It is used for linking between pages
 
-
 'use client'
 
 import Link from 'next/link'
 import styles from './page.module.css'
 import { useRouter } from 'next/navigation'
 
-
 export default function Home() {
 
-  const router = useRouter();
-  return (
-    <main>
-      <h1>Welcome to Home Page</h1>
+const router = useRouter();
+return (
+<main>
+<h1>Welcome to Home Page</h1>
 
       {/* Linking */}
       <Link href="/login">Go to Login Page</Link>
@@ -256,37 +254,33 @@ export default function Home() {
       {/* Navigation */}
       <button onClick={() => router.push("/login")}>Go to login page</button>
     </main>
-  )
+
+)
 }
-
-
 
 ===================================================================
 
 ## nextjs06_Nested Routing
 
 Normal Routing
- --> localhost:3000/about
- =>  src/about/page.js
+--> localhost:3000/about
+=> src/about/page.js
 
 Nested Routing
 -->localhost:3000/about/aboutcollage
 => src/about/aboutcollage/page.js
 
-*** if post learnjs is variable one.
+\*\*\* if post learnjs is variable one.
 --> localhost:3000/blog/learnjs
-=>  src/blog/[...slug].js
-
-
-
+=> src/blog/[...slug].js
 
 ===================================================================
 
 ## nextjs09_DYNAMIC Routing
 
-*** if post learnjs is variable one.
+\*\*\* if post learnjs is variable one.
 --> localhost:3000/studentlist/akshay
-=>  src/studentlist/[student]/page.js
+=> src/studentlist/[student]/page.js
 
 'use client'
 
@@ -295,11 +289,92 @@ export default function StudentDetail(props){
     return(
         <h1>Welcome to student details of {props.params.student}</h1>
     )
-} 
+
+}
+
+===================================================================
+
+## next10_catch all segments of routes in nextjs
+
+In Next.js, you can define dynamic routes using segments. These segments are parts of the URL that can vary, allowing you to create dynamic pages and handle different parameters. Dynamic routing with segments is achieved by creating files and directories with square brackets [] in the pages directory. Each set of square brackets represents a segment in the URL.
+
+Here's how segments work in Next.js:
+
+```
+
+1> Basic Segment:
+A basic segment is enclosed in a single pair of square brackets. For example, [slug].js represents a basic segment.
+It captures one part of the URL, and you can access it as a parameter in your component using useRouter or getServerSideProps or getStaticProps.
+
+2> Multiple Segments:
+You can have multiple segments in the URL by using multiple pairs of square brackets. For example, [category]/[slug].js represents two segments.
+Each segment captures a part of the URL, and you can access these segments as parameters.
+Optional Segments:
+
+You can make a segment optional by adding a hyphen - at the beginning of the square brackets. For example, [-slug].js.
+Optional segments allow you to have URLs with or without that segment. You can use this for optional parameters in your routes.
+
+3> Catch-All Segments:
+A catch-all segment is indicated by three dots ... within square brackets, like [...slug].js.
+It captures multiple segments of the URL into an array, allowing for more flexible routing.
+Here are some examples of how you can create routes using segments in Next.js:
 
 
+-- Single Dynamic Segment:
+File: [slug].js
+URL: /page-name
 
 
+--Multiple Dynamic Segments:
+File: [category]/[slug].js
+URL: /blog/react/nextjs
+
+--Optional Segment:
+File: [-slug].js
+URL: /products or /products/some-product
+
+
+--Catch-All Segment:
+File: [...slug].js
+URL: /products/laptops/apple/macbook
+
+With dynamic segments, you can create flexible and powerful routes in Next.js. You can then access
+the values of these segments as parameters in your components, allowing you to create dynamic content
+and pages based on the URL structure.
+
+HERE IS WHAT WE IMPLEMENTED IN PROJECT
+if we add http://localhost:3000/study/akshay/chavhan/wrongway
+then it will show
+>>>
+akshay
+chavhan
+wrongway
+
+Here is the code :- >
+'use client'
+
+
+export default function Lecture(props) {
+    const { params } = props;
+    // console.log(props);
+    return (
+        <div>
+            <h1>Welcome to the Lecture Page</h1>
+            <ul>
+                {
+                    params && params.lecture.map((lecture) => {
+                        return (
+                            <li>{lecture}</li>
+                        )
+                    })
+                }
+            </ul>
+        </div>
+    )
+}
 
 
 ===================================================================
+
+## next11 404 page in nextjs
+
