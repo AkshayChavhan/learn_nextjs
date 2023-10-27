@@ -3,7 +3,8 @@
 }
 
 .pad-right {
-    padding-right: 30px
+    padding-right: 30px;
+    font-size: 17px;
 }
 
 .ul-style-none {
@@ -14,4 +15,8 @@
 .login-nav {
     padding: 24px 50px;
     background-color: #eaead8;
+}
+
+.nav-item:hover{
+    color : rgb(0, 0, 0)
 }
