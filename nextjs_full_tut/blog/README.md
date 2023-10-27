@@ -390,5 +390,17 @@ Make routes specific 404 pages ?
 Middleware runs in between req and res , where after req and before res.
 Middleware in Next.js is a concept used for customizing and augmenting the behavior of a Next.js application, specifically for server-side rendering (SSR). Middleware functions are used to perform tasks such as authentication, logging, data manipulation, and more before a page is rendered or as part of the server request/response cycle.
 
+============================================================
+# next14 Fetch data in client component
+
+What we are covering ?
+- create product component
+- make it client component
+- add hook
+- call api
+- render data
+
+
+
 
 
