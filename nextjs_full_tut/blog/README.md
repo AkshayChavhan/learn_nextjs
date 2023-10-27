@@ -378,3 +378,9 @@ export default function Lecture(props) {
 
 ## next11 404 page in nextjs
 
+What we are doing ?
+Make global 404 pages ?
+Make routes specific 404 pages ?
+
+
+
