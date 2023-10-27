@@ -505,4 +505,17 @@ What we are learning ?
 - apply css module 
 - multiple css module
 
+=========================================================================================================
+# next18 Image optimization
 
+In Next.js, the next/image component provides a powerful and built-in way to optimize images for performance and responsiveness on your website. Using the next/image component has several advantages over the regular <img> tag in terms of image optimization:
+
+Automatic Optimization: When you use the next/image component, Next.js automatically optimizes your images for performance. It resizes, compresses, and serves the most appropriate image format (such as WebP) based on the user's browser and device. This reduces the page load time and improves the overall user experience.
+
+Responsiveness: The next/image component allows you to specify different image sizes for different screen resolutions and devices. You can set width and height attributes, and Next.js will generate multiple image versions for those dimensions. This is crucial for providing a responsive design that looks good on both desktop and mobile.
+
+Lazy Loading: By default, the next/image component uses lazy loading. Images are loaded only when they are in the viewport, which reduces initial page load times and saves bandwidth.
+
+Blur-Up Effect: Next.js provides a blur-up effect for images, which means a low-resolution image is loaded quickly and then replaced with the high-resolution image. This improves the perceived performance of your site.
+
+Automatic WebP Conversion: Next.js automatically converts images to the WebP format, which offers better compression and quality. Modern browsers that support WebP will receive this optimized format.
