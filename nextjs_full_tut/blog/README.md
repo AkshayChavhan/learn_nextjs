@@ -412,5 +412,9 @@ What we cover?
 - render data
 
 
+============================================================
+# next16 Use client component with server component in nextjs
 
-f 
+Here we are trying to use client events like button click on server side component by creating a client
+component having button with its event.
+

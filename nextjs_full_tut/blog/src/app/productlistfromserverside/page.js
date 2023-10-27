@@ -1,3 +1,4 @@
+import Button from "./Button";
 
 async function Productlist(){
 
@@ -16,7 +17,7 @@ export default async function Productlistfromserverside() {
                 product && product.map((item) => (
                     <div key={item.id}>
                         <h1>Title :- {item.title}</h1>
-                        <h2>Price :- {item.price}</h2>
+                        <Button price={item.price}/>
                     </div>
                 ))
             }
