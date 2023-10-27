@@ -496,3 +496,13 @@ files with the respective extensions (e.g., .scss, .less) and importing them int
 
 You can use third-party CSS libraries and frameworks like Bootstrap or Material-UI by installing them and following their respective documentation for integration with Next.js.
 
+
+CSS Moduels in Nextjs ===>
+What we are learning ?
+
+- How this is different from normal css
+- make a new modular css file
+- apply css module 
+- multiple css module
+
+

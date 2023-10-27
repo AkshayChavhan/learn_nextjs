@@ -112,9 +112,7 @@ a {
   margin: 0;
 }
 
-
-/* this will apply on all screens where we use h1 */
 h1 {
-  color : red;
-  background-color: yellow;
+  color : red ;
+  background-color: aqua;
 }
