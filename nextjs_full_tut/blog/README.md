@@ -401,6 +401,16 @@ What we are covering ?
 - render data
 
 
+============================================================
+# next15 Call API in server component
+
+What we cover?
+
+- Create Server component for products
+- make a function for call API
+- call API
+- render data
 
 
 
+f 
