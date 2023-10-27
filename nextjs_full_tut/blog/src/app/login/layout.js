@@ -23,7 +23,8 @@ export default function Layout({ children }) {
                     </li>
                 </ul>
 
-            {children}
+                {children}
+            </div>
         </div>
     )
 } 
