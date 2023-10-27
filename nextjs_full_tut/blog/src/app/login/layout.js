@@ -1,8 +1,13 @@
+'use client'
 import Link from "next/link";
 import "./style.css";
+import { usePathname } from "next/navigation";
 
 
 export default function Layout({ children }) {
+
+    const pathName = usePathname();
+    console.log(pathName);
     return (
         <div>
             <div className="login-nav">
@@ -17,7 +22,7 @@ export default function Layout({ children }) {
                         <Link className="decoration-none nav-item" href="/login/teacher">Login Teacher</Link>
                     </li>
                 </ul>
-            </div>
+
             {children}
         </div>
     )

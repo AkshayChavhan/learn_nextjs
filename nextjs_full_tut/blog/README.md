@@ -281,3 +281,25 @@ Nested Routing
 
 
 ===================================================================
+
+## nextjs09_DYNAMIC Routing
+
+*** if post learnjs is variable one.
+--> localhost:3000/studentlist/akshay
+=>  src/studentlist/[student]/page.js
+
+'use client'
+
+export default function StudentDetail(props){
+
+    return(
+        <h1>Welcome to student details of {props.params.student}</h1>
+    )
+} 
+
+
+
+
+
+
+===================================================================
