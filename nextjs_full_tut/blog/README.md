@@ -553,9 +553,13 @@ There are two ways you can add metadata to your application:
 -File-based Metadata: Add static or dynamically generated special files to route segments.
 
 
+=========================================================================================================
 
+# Next21 - Script component in nextjs
 
+In Next.js, a "script" typically refers to JavaScript code that is included and executed on the client side. This can be in the form of external scripts, inline scripts, or custom React components that manage the loading and execution of scripts. These scripts can be used for various purposes, such as integrating third-party libraries, setting up analytics, or performing client-side actions.
 
+Scripts in Next.js are commonly used to enhance the functionality and interactivity of web pages and components. They can be included and managed using standard HTML script tags, React components, or other techniques as needed for your application.
 
 
 
