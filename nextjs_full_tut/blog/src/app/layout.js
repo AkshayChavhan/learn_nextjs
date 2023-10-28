@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
+import '../../public/style.css';   // this file is in public folder and called as static asset
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,6 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+      <script src="./common.js"></script> 
+      {/* js file from public folder added ,it is an static assets */}
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )
