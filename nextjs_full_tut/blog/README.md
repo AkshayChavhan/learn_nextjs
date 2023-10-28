@@ -541,9 +541,16 @@ CSS and font files are downloaded at build time and self-hosted with the rest of
 sent to Google by the browser.
 
 
+=========================================================================================================
 
+# Genrate Metadata for Dynamic Meta Data
 
+Next.js has a Metadata API that can be used to define your application metadata (e.g. meta and link tags
+inside your HTML head element) for improved SEO and web shareability.
 
+There are two ways you can add metadata to your application:
+-Config-based Metadata: Export a static metadata object or a dynamic generateMetadata function in a layout.js or page.js file.
+-File-based Metadata: Add static or dynamically generated special files to route segments.
 
 
 
