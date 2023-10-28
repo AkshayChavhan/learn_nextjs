@@ -562,6 +562,22 @@ In Next.js, a "script" typically refers to JavaScript code that is included and 
 Scripts in Next.js are commonly used to enhance the functionality and interactivity of web pages and components. They can be included and managed using standard HTML script tags, React components, or other techniques as needed for your application.
 
 
+=========================================================================================================
+
+# Next22 - Loader in nextjs
+What we are learning >>>
+Why do we need loader ?
+call api?
+render data of api on screen?
+make loading screen?
+check loader?
+
+The special file loading.js helps you create meaningful Loading UI with React Suspense. With this convention, you can show an instant loading state from the server while the content of a route segment loads. The new content is automatically swapped in once rendering is complete.
+
+-- Instant Loading States
+An instant loading state is fallback UI that is shown immediately upon navigation. You can pre-render loading indicators such as skeletons and spinners, or a small but meaningful part of future screens such as a cover photo, title, etc. This helps users understand the app is responding and provides a better user experience.
+
+Create a loading state by adding a loading.js file inside a folder.
 
 
 
