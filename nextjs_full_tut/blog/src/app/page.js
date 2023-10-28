@@ -1,36 +1,19 @@
-'use client'
+import { Yuji_Hentaigana_Akari } from "next/font/google";
 
-import Image from "next/image"
-import Profile from "../../public/vercel.svg";
+const yuji_Hentaigana_Akari = Yuji_Hentaigana_Akari({
+  weight : '400', 
+  display : 'swap',
+  subsets : ['latin']
+})
 
 export default function Home() {
 
   return (
     <main>
-      <Image 
-      src={Profile}
-      alt="vercel logo"
-      height="200"
-      width="200"
-      />
-     {/* It will break
-      <img
-      src={Profile}
-      /> */}
-
-      <img
-      src = {Profile.src} // it will work
-      />
-
-{/* You will error for below 
-Error: Invalid src prop (https://unsplash.com/photos/a-police-car-parked-on-the-side-of-the-road-j0syEjr_l9o) on `next/image`,
-hostname "unsplash.com" is not configured under images in your `next.config.js` */}
-      <Image
-      src={"https://unsplash.com/photos/a-police-car-parked-on-the-side-of-the-road-j0syEjr_l9o"}
-      alt="vercel logo"
-      height="200"
-      width="200"
-      />
+      <h1>Welcome to the Home page</h1>
+      {/* if we comment head code from layout.js then below font family will not work */}
+      <h1 style={{ fontFamily : "Agbalumo"}}>Form with link tag (normal tag / Network req happen)</h1>
+    <h1 className={yuji_Hentaigana_Akari.className}>Font with Nextjs font feature (No network req will call)</h1>
     </main>
   )
 }

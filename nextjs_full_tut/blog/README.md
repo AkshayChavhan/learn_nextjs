@@ -519,3 +519,38 @@ Lazy Loading: By default, the next/image component uses lazy loading. Images are
 Blur-Up Effect: Next.js provides a blur-up effect for images, which means a low-resolution image is loaded quickly and then replaced with the high-resolution image. This improves the perceived performance of your site.
 
 Automatic WebP Conversion: Next.js automatically converts images to the WebP format, which offers better compression and quality. Modern browsers that support WebP will receive this optimized format.
+
+
+
+
+=========================================================================================================
+
+# Font Optimization in next.js
+
+next/font are get loaded on server side and client will not get called from the browser, thus maintain privacy.
+
+
+next/font will automatically optimize your fonts (including custom fonts) and remove external network requests
+for improved privacy and performance.
+
+next/font includes built-in automatic self-hosting for any font file. This means you can optimally load web fonts
+with zero layout shift, thanks to the underlying CSS size-adjust property used.
+
+This new font system also allows you to conveniently use all Google Fonts with performance and privacy in mind.
+CSS and font files are downloaded at build time and self-hosted with the rest of your static assets. No requests are
+sent to Google by the browser.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
