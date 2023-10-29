@@ -779,3 +779,18 @@ In general only one .env.local file is needed. However, sometimes you might want
 Next.js allows you to set defaults in .env (all environments), .env.development (development environment), and .env.production (production environment).
 
 .env.local always overrides the defaults set.
+
+
+
+=========================================================================================================
+
+# Next27 - API Routes in Nextjs :- 
+
+What we are learning : =>
+- use of API routes ?
+- Make API route ?
+- Test it on postman ?
+
+
+
+
