@@ -719,3 +719,63 @@ A service file in Next.js might typically include functions or methods that:
 - Provide a clean and consistent API for other parts of the application to use.
 
 Service files can be used in Next.js applications to encapsulate the logic for working with external services, such as RESTful APIs, GraphQL endpoints, databases, and other data sources. They promote code modularity and reusability while keeping the integration with external services consistent and maintainable.
+
+
+
+
+
+
+=========================================================================================================
+
+# Next27 - Environment Variaables in nextjs :-
+
+- What is env variable ?
+- How to access env variables ?
+- use env variables ?
+
+Environment variables in Next.js are a way to securely store and manage configuration values, secrets, and settings that your
+application requires. These variables are not hard-coded into your code but are instead stored outside the application codebase,
+making it easier to manage configuration for different environments and enhancing security by keeping sensitive information separate
+from your source code.
+
+In Next.js, you can use environment variables to store values like API keys, database connection strings, feature flags, and other
+configuration options. These variables can be accessed within your application code.
+
+Here's how to work with environment variables in Next.js:
+
+
+Create a .env File:
+
+To define your environment variables, you typically create a .env file at the root of your Next.js project. You can also use .env.local
+for local development-specific variables, or .env.production for production-specific variables.
+
++++ In Next.js, you can use separate environment variables for development and production by creating separate .env files for each environment.
+Here's how you can achieve this:
+
+Create Environment Variable Files:
+
+First, create two separate environment variable files, one for development (e.g., .env.local) and one for production (e.g.,   .env.production).
+You can also create environment-specific files for other environments if needed.
+
+For development:
+Create a file named .env.local and define your development-specific environment variables there.
+
+For production:
+Create a file named .env.production and define your production-specific environment variables there.
+
+Access Environment Variables in Your Code:
+
+In your Next.js code, you can access the environment variables using process.env. Next.js will automatically load the appropriate environment
+variables based on your environment.
+
+For example, if you define an environment variable called API_KEY in both .env.local and .env.production, the correct value will be loaded based
+on the environment in which your application is running.
+
+
+<!-- from next website -->
+Default Environment Variables
+In general only one .env.local file is needed. However, sometimes you might want to add some defaults for the development (next dev) or production (next start) environment.
+
+Next.js allows you to set defaults in .env (all environments), .env.development (development environment), and .env.production (production environment).
+
+.env.local always overrides the defaults set.
