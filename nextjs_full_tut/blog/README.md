@@ -580,4 +580,69 @@ An instant loading state is fallback UI that is shown immediately upon navigatio
 Create a loading state by adding a loading.js file inside a folder.
 
 
+=========================================================================================================
 
+# Next23&24 - Export Static HTML Page with Build
+
+In the context of web development, a "Production Build" and a "Development Build" refer to different configurations and optimizations of a web application for specific purposes:
+
+Development Build:
+
+A Development Build is a version of a web application that is specifically optimized for the development phase of a project. In a Development Build:
+
+Debugging Information: It typically includes extensive debugging information, source maps, and unminified code. This makes it easier for developers to identify and fix issues during development.
+
+Performance: The focus is on providing a convenient and productive development experience. Performance is not a primary concern in a Development Build, so the code may not be optimized for speed or efficiency.
+
+Verbose Logging: It may include verbose logging and debugging statements to assist developers in tracking issues and understanding the application's behavior.
+
+Hot Reloading: Development Builds often include features like hot module replacement, allowing developers to see immediate updates in the application without a full page refresh.
+
+No Code Splitting: Code splitting, which separates code into smaller bundles to improve load times, may not be as aggressive in a Development Build because the goal is to simplify debugging.
+
+Production Build:
+
+A Production Build is a version of a web application that is intended for deployment to a live or public environment, where it will be accessed by users. In a Production Build:
+
+Optimization: The code is heavily optimized for performance, including minification, tree shaking, and other techniques to reduce the bundle size and improve loading speed.
+
+Removal of Debugging Information: Debugging information, console logs, and source maps are removed or minimized to reduce the size of the JavaScript bundle and enhance security.
+
+Caching: The code is often configured to leverage browser caching to reduce server requests and improve load times for returning visitors.
+
+Error Handling: Production Builds typically include error handling and reporting mechanisms, which may include logging and monitoring services to detect and respond to issues in a production environment.
+
+Security: Security considerations, such as input validation, are prioritized in a Production Build to protect the application from potential vulnerabilities.
+
+Code Splitting: Code is efficiently split into smaller bundles, allowing for better performance, especially on slow or unreliable network connections.
+
+In summary, a Development Build is tailored for the development phase, with a focus on debugging and developer convenience, while a Production Build is optimized for performance, security, and user experience in a live or public environment. Developers typically work with Development Builds during the development phase and switch to Production Builds when deploying an application for public use.
+
+
+
+What we are learning 
+- WHat is static HTML means ? 
+- Make some pages ?
+- Add Configuration ?
+- Run build command ?
+- Check HTML and try to run it ?
+
+
+If our application for now is of only 5 -6 page and not big enough so we can spend time on deploying whole application.
+In such condition we used to deploy static html page ( by creating static html pages ).
+
+How to create build ?
+Before build we need to config next.js in next.config.js file as below
+const nextConfig = {
+    output : 'export'
+}
+
+
+
+run command
+>>> npm run build
+
+then it will generate folder name "out" where you will find content as static html files for all pages.
+
+
+=========================================================================================================
