@@ -243,6 +243,7 @@ export default function Home() {
 
 const router = useRouter();
 return (
+
 <main>
 <h1>Welcome to Home Page</h1>
 
@@ -467,7 +468,7 @@ Styled-components is a popular CSS-in-JS library that allows you to define your 
 literals within your JavaScript/React components.
 To use styled-components, you need to install the library, and then you can define your styles directly in your
 components using JavaScript template literals.
-For example: 
+For example:
 
 
 >>>
@@ -502,7 +503,7 @@ What we are learning ?
 
 - How this is different from normal css
 - make a new modular css file
-- apply css module 
+- apply css module
 - multiple css module
 
 =========================================================================================================
@@ -620,8 +621,8 @@ In summary, a Development Build is tailored for the development phase, with a fo
 
 
 
-What we are learning 
-- WHat is static HTML means ? 
+What we are learning
+- WHat is static HTML means ?
 - Make some pages ?
 - Add Configuration ?
 - Run build command ?
@@ -646,3 +647,75 @@ then it will generate folder name "out" where you will find content as static ht
 
 
 =========================================================================================================
+
+# Next25 - Static site generation in nextjs :-
+
+What we are learning :-
+- WHat is SSG means ?
+- Make a service file and call API .
+- Display data from API
+- Make dynamic routing
+- make build with SSG
+
+In rendering happen on server side is called as PRERENDERING. Prerendering has 2 types
+1> Static Site Generation - Convert JS code into html by server while BUILDING Project
+2> Server Site rendering - when client call on server and server response by converting response in html pages.
+
+
+Static Site Generation (SSG) is a method of building websites where the web pages are generated at build time,
+and the resulting HTML, CSS, and JavaScript files are pre-rendered and ready to be served to clients. In an SSG
+approach, the web server serves static files directly, without the need for dynamic server-side processing for
+each request. This offers several benefits, including improved performance, security, and scalability.
+
+Here are the key characteristics and advantages of Static Site Generation:
+
+Pre-rendering: During the build process, each page of the website is generated as a static HTML file. This means
+that the content is rendered ahead of time, not on each request, which significantly reduces server load and
+improves response times.
+
+Performance: SSG sites are incredibly fast because there's no server-side processing for most page requests.
+This results in reduced latency and faster load times, which is especially important for user experience and SEO.
+
+Security: SSG reduces the attack surface because there's no server-side processing. Static files are inherently
+less vulnerable to security exploits compared to dynamic, server-rendered pages.
+
+Scalability: SSG sites are highly scalable, as they can be easily served by Content Delivery Networks (CDNs) for
+global distribution. CDNs cache static content at various points worldwide, reducing the load on the origin server.
+
+SEO-Friendly: SSG sites are very SEO-friendly because search engines can easily crawl and index static HTML pages.
+This can positively impact search engine rankings.
+
+Reduced Server Costs: With SSG, you can host your site on inexpensive static file hosting services, reducing the
+need for expensive server infrastructure.
+
+Improved Developer Experience: SSG allows developers to work with familiar development tools and frameworks,
+making it easier to build and maintain websites.
+
+Partial Rebuilding: SSG allows for partial rebuilding of the site when content changes, which means that only
+the affected pages need to be regenerated, rather than rebuilding the entire site.
+
+Support for Dynamic Data: While SSG generates static pages, it can also fetch and integrate dynamic data at build
+time, making it suitable for content-rich websites that include dynamic elements.
+
+Next.js, a popular React framework, supports SSG as one of its key features. Next.js allows you to build SSG
+websites with ease, enabling you to create highly performant and SEO-friendly web applications while benefiting
+from the flexibility and ease of use of React.
+
+Static Site Generation is a powerful approach for a wide range of web applications, including blogs, e-commerce
+sites, documentation, and marketing pages, as well as many other content-centric websites. It's particularly
+well-suited for scenarios where content doesn't change frequently and where delivering a fast and secure user
+experience is a priority.
+
+
+
+SERVICE FILE :-
+ the term "service file" can refer to a JavaScript file that contains code for interacting with external services or APIs. These files are commonly used in web development to encapsulate the logic for making HTTP requests to external services, handling data, and providing a clean interface for other parts of the application to interact with those services.
+
+A service file in Next.js might typically include functions or methods that:
+
+- Make HTTP requests to external APIs or services.
+- Process data received from these services.
+- Handle authentication and authorization related to the service.
+- Provide a clean and consistent API for other parts of the application to use.
+
+Service files can be used in Next.js applications to encapsulate the logic for working with external services, such as RESTful APIs, GraphQL endpoints, databases, and other data sources. They promote code modularity and reusability while keeping the integration with external services consistent and maintainable.

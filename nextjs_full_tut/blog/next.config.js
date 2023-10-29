@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output : 'export'
+    // Method 2 to redirect the url
+    redirects: async() => {
+        return [
+            {
+                source : "/user/:userId",
+                destination : "/",
+                permanent: false
+            }
+        ]
+    }
 }
 
 module.exports = nextConfig
