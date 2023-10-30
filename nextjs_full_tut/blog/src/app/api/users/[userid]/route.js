@@ -10,3 +10,22 @@ export function GET(request, content) {
         return NextResponse.json({ result: filterdata, status: 200 }); // Changed status to 200 (OK)
     }
 }
+
+
+export async function PUT(request, content) {
+    const body = await request.json();
+    console.log("content.params.userid  ,", content.params.userid, "body ,", body);
+    if(!body.name || !body.id || !body.age ){
+        return NextResponse.json({ result: "Please input the required data", status: 400 }); // Changed status to 404 (Not Found)
+    }
+    return NextResponse.json({ message : "User Updated", result : body , suceess : true , status: 200 }); // Changed status to 404 (Not Found)
+}
+
+
+export async function DELETE(request, content) {
+    const id = content.params.userid ;
+    if(!id){
+        return NextResponse.json({ result: "Internal error, please try after sometime.", status: 400 }); // Changed status to 404 (Not Found)
+    }
+    return NextResponse.json({ message : "User deleted successfully", suceess : true , status: 200 }); // Changed status to 404 (Not Found)
+}

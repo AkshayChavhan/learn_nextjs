@@ -1,3 +1,7 @@
+
+
+import DeleteAction from '@/utils/deleteAction';
+import Link from 'next/link';
 import React from 'react'
 
 
@@ -11,7 +15,6 @@ async function getData(id) {
 export default async function Userdetail(props) {
     let userdetail = await getData(props.params.userdetail);
     userdetail = userdetail.result;
-    console.log("userdetail => ", userdetail);
     return (
         <div>
             <div>userdetail</div>
@@ -21,6 +24,9 @@ export default async function Userdetail(props) {
                         <div>
                             <h1>Name :- { item.name }</h1>
                             <h1>Age :- { item.age }</h1>
+                            <Link href={`/users/${item.id}/update`}><span>Edit</span></Link>
+                            <DeleteAction id={item.id}/>
+                            {/* <Link href={`/users/${item.id}/update`}><span>Delete</span></Link> */}
                         </div>
                     )
                 })
