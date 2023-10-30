@@ -793,4 +793,15 @@ What we are learning : =>
 
 
 
+## GET API with static data
+
+- API for userdetail and userlist
+- make a static db file
+- make user api call
+- make a route for single user API
+- GET request params
+- filter result and test API
+
+
+
 
