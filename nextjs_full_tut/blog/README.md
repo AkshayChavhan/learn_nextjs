@@ -802,6 +802,8 @@ What we are learning : =>
 - GET request params
 - filter result and test API
 
+# API Integration
+
 
 
 
