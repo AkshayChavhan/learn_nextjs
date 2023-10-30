@@ -21,3 +21,11 @@ export async function PUT(request, content) {
     return NextResponse.json({ message : "User Updated", result : body , suceess : true , status: 200 }); // Changed status to 404 (Not Found)
 }
 
+
+export async function DELETE(request, content) {
+    const id = content.params.userid ;
+    if(!id){
+        return NextResponse.json({ result: "Internal error, please try after sometime.", status: 400 }); // Changed status to 404 (Not Found)
+    }
+    return NextResponse.json({ message : "User deleted successfully", suceess : true , status: 200 }); // Changed status to 404 (Not Found)
+}
