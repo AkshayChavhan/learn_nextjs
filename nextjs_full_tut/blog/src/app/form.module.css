@@ -1,0 +1,29 @@
+.form_section {
+    width: 626px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.form_label {
+    padding: 15px;
+    font-weight: 500;
+}
+
+.form_input {
+    height: 36px;
+    align-self: center;
+}
+
+.form_modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn_submit {
+    padding: 12px;
+}
+
+.btn_section {
+
+}
