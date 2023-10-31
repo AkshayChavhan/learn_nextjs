@@ -1302,5 +1302,15 @@ Code Snippet 3: pages/blogpost/[slug].js after applying getServerSideProps.
 You can check for yourself if the content is present in the page source of the blog posts page as well. This has made our website faster than before. We are populating content on being requested, and the page source contains the hydrated HTML. The entire process we followed today is called Server-Side Rendering, and was one of the strategies we use under pre rendering. I'll see you all in the next lecture, where we'll discuss another strategy for pre-rendering, namely Static Site Generation.
 
 
+## Next30_ Mongodb and Nextjs
+Here what we are learning : ==>
+- make an env file and username and password ?
+- make db connection ?
+- make schema for collection ?
+- get data from mongodb to nextjs ?
+- make sample api with DB Data ?
+
+
+
 
 
