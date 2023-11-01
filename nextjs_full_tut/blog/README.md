@@ -806,4 +806,45 @@ What we are learning : =>
 
 
 
+===================================================================
+
+## next36 REDUX Vs REDUXTOOLKIT Intro and Archetecture
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What we are learning here : =>
+
+- Redux main component
+- Redux and RTK flow
+- HOw redux works ?
+
+
+
+=> REDUX MAIN COMPONENTS >
+~~~~~~~~~~~~~~~~~~~~~~~
+
+# Action
+# Reducer
+# Store
+# Dispatcher ,Selected
+
+Here is the flow of REDUX
+VIEW/UI -> (dispatch) -> ACTION -> REDUCERS -> STORE -> (subscribe) -> again VIEW/UI
+
+
+
+
+Here is the flow of REACT REDUX TOOLKIT
+VIEW/UI -> (dispatch) -> SLICE -> STORE -> (subscribe) -> again VIEW/UI
+
+<!-- INSTALLATION OF REDUX REDUX TOOLKIT -->
+
+if you are creating new next app then you can add below script
+>>> npx create-next-app name_of_project
+
+>>> npm install @reduxjs/toolkit 
+>>> npm install react-redux (if you need react bindings)
+
+
+
+
 
