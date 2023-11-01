@@ -27,21 +27,21 @@ function AddProduct() {
     const AddProduct = async () => {
         try {
             const postProductData = await fetch("http://localhost:3000/api/products", {
-            method: "POST",
-            body: JSON.stringify(form)
-        });
+                method: "POST",
+                body: JSON.stringify(form)
+            });
 
-        let response = await postProductData.json();
-        if (response.success === true) {
-            alert("Product added successfully.");
-            setForm({
-                name: "",
-                price: "",
-                brand: "",
-                color: ""
-            })
-        }
-        router.push("/products");
+            let response = await postProductData.json();
+            if (response.success === true) {
+                alert("Product added successfully.");
+                setForm({
+                    name: "",
+                    price: "",
+                    brand: "",
+                    color: ""
+                })
+            }
+            router.push("/products");
         } catch (error) {
             alert("Something went wrong.");
         }
@@ -50,6 +50,7 @@ function AddProduct() {
     return (
         <>
             <div className={classes.form_modal}>
+                <h1>Add Product</h1>
                 <div className={classes.form_section}>
                     <label className={classes.form_label}>Name of Product</label>
                     <input
@@ -88,6 +89,7 @@ function AddProduct() {
                 </div>
                 <div className={classes.btn_section}>
                     <button
+                        style={{ margin: "10px" }}
                         className={classes.btn_submit}
                         onClick={AddProduct}>
                         Add Product
