@@ -887,7 +887,11 @@ What we are learning :=>
 - call action on button click
 - write a logic to remove data from redux
 
-
-
+REDUX data between pages :==>
+- What we are learning :=>
+- Make pages in Nextjs
+- Make link for page
+- get data from redux
+- add style
 
 
