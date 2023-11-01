@@ -1,7 +1,8 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import styles from '../table.module.css';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 async function fetchProductList() {
   try {
@@ -16,7 +17,7 @@ async function fetchProductList() {
 }
 
 function ProductList() {
-//   const router = useRouter();
+  const router = useRouter();
   const [productList, setProductList] = useState([]);
   const [error, setError] = useState(null);
 
@@ -35,7 +36,7 @@ function ProductList() {
   return (
     <>
       <h1>Product List</h1>
-      {/* <button onClick={() => router.push('/addproduct')}>Add Product</button> */}
+      <button onClick={() => router.push('/addproduct')}>Add Product</button>
       {error ? (
         <p>{error}</p>
       ) : (
@@ -46,6 +47,7 @@ function ProductList() {
               <th className={styles.tableth}>Brand</th>
               <th className={styles.tableth}>Price</th>
               <th className={styles.tableth}>Color</th>
+              <th className={styles.tableth}>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -56,6 +58,7 @@ function ProductList() {
                   <td className={styles.tabletd}>{item.brand}</td>
                   <td className={styles.tabletd}>{item.price}</td>
                   <td className={styles.tabletd}>{item.color}</td>
+                  <td className={styles.tabletd}><Link href={`/products/${item._id}`}>Edit</Link></td>
                 </tr>
               ))
             ) : (
