@@ -58,8 +58,8 @@ function UpdateProduct({ params }) {
     return (
         <>
             <div>
-                <h1>Edit Product Details</h1>
                 <div className={classes.form_modal}>
+                    <h1>Edit Product Details</h1>
                     <div className={classes.form_section}>
                         <label className={classes.form_label}>Name of Product</label>
                         <input

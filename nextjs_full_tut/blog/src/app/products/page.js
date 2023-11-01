@@ -3,10 +3,11 @@ import React, { useEffect, useState } from 'react';
 import styles from '../table.module.css';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import DeleteProductActionBtn from "../../lib/deleteProductActionBtn";
 
 async function fetchProductList() {
   try {
-    const response = await fetch('http://localhost:3000/api/products');
+    const response = await fetch('http://localhost:3000/api/products' , { cache:"no-cache"});
     if (!response.ok) {
       throw new Error('Failed to fetch data');
     }
@@ -20,6 +21,22 @@ function ProductList() {
   const router = useRouter();
   const [productList, setProductList] = useState([]);
   const [error, setError] = useState(null);
+
+
+  const DeleteProduct = async (id) => {
+    try {
+      const deleteProductFromMongo = await fetch(`http://localhost:3000/api/products/${id}`, {
+        method: "DELETE"
+      })
+      let jsonDeleteProductFromMongo = await deleteProductFromMongo.json();
+      let msg = jsonDeleteProductFromMongo.message;
+      alert(msg);
+      router.push("/products");
+    } catch (error) {
+      alert(error);
+    }
+  }
+
 
   useEffect(() => {
     fetchProductList()
@@ -58,7 +75,12 @@ function ProductList() {
                   <td className={styles.tabletd}>{item.brand}</td>
                   <td className={styles.tabletd}>{item.price}</td>
                   <td className={styles.tabletd}>{item.color}</td>
-                  <td className={styles.tabletd}><Link href={`/products/${item._id}`}>Edit</Link></td>
+                  <td className={styles.tabletd}>
+                    <>
+                      <button style={{ padding : "7px" , margin : "10px"}} onClick={()=> router.push(`/products/${item._id}`)}>Edit</button>
+                      <button style={{ padding : "7px" , margin : "10px"}} onClick={async () => await DeleteProduct(item._id)}>Delete</button>
+                    </>
+                  </td>
                 </tr>
               ))
             ) : (
