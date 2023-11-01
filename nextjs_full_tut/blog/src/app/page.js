@@ -1,6 +1,8 @@
 "use client"
 import Link from "next/link";
 import { useState } from "react";
+import AddUser from "./component/addUser";
+import DisplayUser from "./component/displayUser";
 
 export default function Home() {
   const [file, setFile] = useState(null);
@@ -23,6 +25,7 @@ export default function Home() {
 
   return (
     <main>
+      <div>
       <h1>Welcome to the Home page</h1>
       <ul>
         <li><Link href="/users">Go to user list</Link></li>
@@ -39,6 +42,11 @@ export default function Home() {
           <button type="submit">Upload File</button>
         </form>
       </ul>
+      </div>
+      <div>
+        <AddUser />
+        <DisplayUser />
+      </div>
     </main>
   )
 }

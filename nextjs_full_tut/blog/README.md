@@ -806,4 +806,88 @@ What we are learning : =>
 
 
 
+===================================================================
+
+## next36 REDUX Vs REDUXTOOLKIT Intro and Archetecture
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What we are learning here : =>
+
+- Redux main component
+- Redux and RTK flow
+- HOw redux works ?
+
+
+
+=> REDUX MAIN COMPONENTS >
+~~~~~~~~~~~~~~~~~~~~~~~
+
+# Action
+# Reducer
+# Store
+# Dispatcher ,Selected
+
+Here is the flow of REDUX
+VIEW/UI -> (dispatch) -> ACTION -> REDUCERS -> STORE -> (subscribe) -> again VIEW/UI
+
+
+
+
+Here is the flow of REACT REDUX TOOLKIT
+VIEW/UI -> (dispatch) -> SLICE -> STORE -> (subscribe) -> again VIEW/UI
+
+<!-- INSTALLATION OF REDUX REDUX TOOLKIT -->
+
+if you are creating new next app then you can add below script
+>>> npx create-next-app name_of_project
+
+>>> npm install @reduxjs/toolkit 
+>>> npm install react-redux (if you need react bindings)
+
+
+
+What we are learning
+++ Folder Structure ,Store and Provider
+make folder and file
+make store
+make provider
+
+We are creating 2 components one is to create user form , other is to display created user.
+
+make slice in redux toolkit
+What is slice in RTK
+Use of slice
+Create slice
+
+What is slice :- A slice is a collection of REDUX Reducer logic and actions for a single feature in your app.
+In Slice , we define action and reducer in single file.
+
+ACTION + REDUCER = SLICE
+
+
+SEND DATA FROM NEXT TO REDUX :==>
+What we are learning :=>
+- Get data from input field to state
+- import action function from Slice
+- use dispatch hook for send data in action
+- check data in slice 
+
+GET DATA FROM NEXT TO REDUX :==>
+What we are learning :=>
+- import useSelector Hook
+- Display list of Users
+- Add style with user list
+
+
+
+REMOVE DATA FROM NEXT TO REDUX :==>
+What we are learning :=>
+- make action for remove data in slice
+- make remove button with each other
+- call action on button click
+- write a logic to remove data from redux
+
+
+
+
 
