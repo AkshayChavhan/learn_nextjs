@@ -2,15 +2,27 @@
 
 import React, { useState } from 'react';
 import classes from "../form.module.css";
-
+import { useRouter } from 'next/navigation'
 
 function AddProduct() {
+    const router = useRouter();
+
     const [form, setForm] = useState({
         name: "",
         price: "",
         brand: "",
         color: ""
     })
+
+    const CancelAddProduct = () => {
+        setForm({
+            name: "",
+            price: "",
+            brand: "",
+            color: ""
+        });
+        router.push("/products");
+    }
 
     const AddProduct = async () => {
         try {
@@ -29,6 +41,7 @@ function AddProduct() {
                 color: ""
             })
         }
+        router.push("/products");
         } catch (error) {
             alert("Something went wrong.");
         }
@@ -78,6 +91,11 @@ function AddProduct() {
                         className={classes.btn_submit}
                         onClick={AddProduct}>
                         Add Product
+                    </button>
+                    <button
+                        className={classes.btn_submit}
+                        onClick={CancelAddProduct}>
+                        Cancel
                     </button>
                 </div>
             </div>
