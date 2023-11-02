@@ -7,10 +7,9 @@ import styles from '../table.module.css';
 function DisplayUser() {
   const dispatch = useDispatch();
   const datas = useSelector((data) => {
-    return data.users
+    return data.userData.users
   })
 
-  console.log("datas => " , datas);
   const DeleteUser = (id) => {
     dispatch(removeUser(id))
   }

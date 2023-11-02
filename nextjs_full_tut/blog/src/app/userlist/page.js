@@ -6,7 +6,7 @@ import { removeUser } from '../redux/slice'
 function UserList() {
     const dispatch = useDispatch()
     const datas = useSelector((data) => {
-        return data.users
+        return data.userData.users
     })
 
     const handleDelete = (id) => {
