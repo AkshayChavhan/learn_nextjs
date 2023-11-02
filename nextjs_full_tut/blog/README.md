@@ -887,6 +887,8 @@ What we are learning :=>
 - call action on button click
 - write a logic to remove data from redux
 
+
+
 REDUX data between pages :==>
 What we are learning :=>
 - Make pages in Nextjs
@@ -894,12 +896,25 @@ What we are learning :=>
 - get data from redux
 - add style
 
+
+
 Make Second SLice in REDUX :==>
 What we are learning :=>
 - Define initial state
 - make slice
 - add reducer
 - check flow
+
+
+
+Make API Call with REDUX TOOLKIT :==>
+What we are learning :=>
+- make page for display api data
+- make api call in slice
+- make reducer for api call
+- display api data on ui
+
+
 
 
 
