@@ -10,11 +10,11 @@ function DisplayUser() {
     return data.users
   })
 
+  console.log("datas => " , datas);
   const DeleteUser = (id) => {
     dispatch(removeUser(id))
   }
 
-  console.log("data new => ", datas);
   return (
     <>
       <table className={styles.maintable}>
