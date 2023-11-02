@@ -888,10 +888,18 @@ What we are learning :=>
 - write a logic to remove data from redux
 
 REDUX data between pages :==>
-- What we are learning :=>
+What we are learning :=>
 - Make pages in Nextjs
 - Make link for page
 - get data from redux
 - add style
+
+Make Second SLice in REDUX :==>
+What we are learning :=>
+- Define initial state
+- make slice
+- add reducer
+- check flow
+
 
 
