@@ -31,6 +31,7 @@ export default function Home() {
         <li><Link href="/users">Go to user list</Link></li>
         <li><Link href="/addproduct">Go to Add Product</Link></li>
         <li><Link href="/products">Go to Productlist</Link></li>
+        <li><Link href="/apiusers">Go to API User List Page</Link></li>
 
         {/* UPLOAD FILE / IMAGE through API */}
         <form onSubmit={UploadFile}>
